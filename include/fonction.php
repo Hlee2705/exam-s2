@@ -66,4 +66,20 @@ function estEmprunt ($id_objet){
     
 }
 
+function getDateEmpuntObject($id_objet) {
+    $sql = "SELECT 
+            date_retour 
+            FROM 
+                emprunt 
+            WHERE 
+                id_objet = %s
+            ORDER BY date_retour DESC 
+            LIMIT 1 ;";
+
+    $sql = sprintf($sql,$id_objet);
+    $request = mysqli_query(bddConnect(),$sql);
+
+    return mysqli_fetch_assoc($request)["date_retour"];
+}
+
 ?>

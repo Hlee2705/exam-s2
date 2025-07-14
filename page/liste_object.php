@@ -14,7 +14,7 @@
                     <?php if(estEmprunt($obj["id_objet"])){?>
                     dispo
                     <?php } else { ?>
-                        est en cours d'emprunt 
+                        dispo le : <?php getDateEmpuntObject($obj["id_objet"]) ?> 
                     <?php } ?>
                 </td>
             </tr>
