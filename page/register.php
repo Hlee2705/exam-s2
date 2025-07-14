@@ -10,7 +10,7 @@
 </head>
 
 <body class="register">
-    <form action="../controleurs/traitementRegister.php" method="post" class="formulaire">
+    <form action="../controleur/t_register.php" method="post" class="formulaire">
 
         <!-- champs Nom , email , password et date de naissance -->
         <!-- champ nom -->

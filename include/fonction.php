@@ -1,21 +1,25 @@
 <?php
 require("connexion.php");
 //ajouter un utilisateur dans la base de données
-function insertUser($nom, $email, $dateNaissance, $mdp)
+function insertMembre($nom, $email, $dateNaissance, $mdp, $ville, $genre, $image_profil)
 {
     // ecriture de la requete pour inseret le nouveux utilisateur
     $sql = "INSERT INTO membre 
                 (nom,
                  email,
-                 dateNaissance,
-                 mdp)
-            VALUES ('%s','%s','%s','%s');";
+                 date_de_naissance,
+                 mdp,
+                 ville,
+                 genre, 
+                 image_profil)
+            VALUES ('%s','%s','%s','%s', '%s', '%s', '%s');";
 
     // fenoy ny banga 
-    $sql = sprintf($sql, $nom, $email, $dateNaissance, $mdp);
-
+    $sql = sprintf($sql, $nom, $email, $dateNaissance, $mdp, $ville, $genre, $image_profil);
+    var_dump($sql);
     //envois de la requete
     $reusiteRequete = mysqli_query(bddConnect(), $sql);
+
 
     return $reusiteRequete;
 }
