@@ -113,4 +113,15 @@ function getAllObjectCat($id_cat) {
     }
     return $listObject;
 }
+
+function insertObject($nom_objet, $id_categorie, $id_membre){
+    $sql = "INSERT INTO objet(nom_objet, id_catetgorie, id_membre)
+            VALUES ('%s', %s, %s);";
+
+    $sql = sprintf($sql, $nom_objet, $id_categorie, $id_membre);
+
+    $reusiteRequete = mysqli_query(bddConnect(), $sql);
+
+    return $reusiteRequete;
+}
 ?>
