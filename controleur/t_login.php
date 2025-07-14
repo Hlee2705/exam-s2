@@ -12,10 +12,10 @@ if($donneesUtilisateur = getDonnerUser($email,$mdp))
 {
     //chargement des donnes utilisatieur
     session_start();
-    $_SESSION["Utilisateur"]["nom"] = $donneesUtilisateur["nom"];
-    $_SESSION["Utilisateur"]["idMembre"] = $donneesUtilisateur["idMembre"];
+    $_SESSION["membre"]["nom"] = $donneesUtilisateur["nom"];
+    $_SESSION["membre"]["id"] = $donneesUtilisateur["id_membre"];
 
-    header("Location: ../page/modele.php?p=home.php");
+    header("Location: ../page/modele.php?p=liste_object.php");
     exit();
 } else {
    header("Location: ../page/modele.php?p=login.php&error=1");

@@ -2,7 +2,7 @@
 require("../include/fonction.php");
 
 //reception des donnees de l'utilisateur venant de register
-var_dump($_FILES);
+
 if($_SERVER["REQUEST_METHOD"] === "POST")
 {
     $nom = $_POST["nom"];

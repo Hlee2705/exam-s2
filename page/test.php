@@ -2,7 +2,8 @@
 
 include("../include/fonction.php");
 
-var_dump(getAllObject());
+// var_dump(getAllObject());
 
-var_dump(insertObject(""))
+insertObject("recourbe cils", 1, 2);
+
 ?>

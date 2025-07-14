@@ -50,3 +50,8 @@ VERSION 2
     - traitement inserer objet
         - utilisation des fonctions pour inserer l'objet et l'image dans la base
     
+VERSION 3 :
+
+- ajout du boutton emprunter sur chaque objet qui sont disponible
+- le lien va conduire vers la page dateDisponible
+- création de la formulaire qui saisi le nombre de jour

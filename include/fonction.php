@@ -115,13 +115,32 @@ function getAllObjectCat($id_cat) {
 }
 
 function insertObject($nom_objet, $id_categorie, $id_membre){
-    $sql = "INSERT INTO objet(nom_objet, id_catetgorie, id_membre)
+    $sql = "INSERT INTO objet(nom_objet, id_categorie, id_membre)
             VALUES ('%s', %s, %s);";
-
+    
     $sql = sprintf($sql, $nom_objet, $id_categorie, $id_membre);
-
+    var_dump($sql);
     $reusiteRequete = mysqli_query(bddConnect(), $sql);
 
     return $reusiteRequete;
 }
+
+function insertImageObject($id_objet, $image_object)
+{
+    $sql = "INSERT INTO  
+                images_objet 
+                (id_objet,nom_image)
+            VALUES (%s,'%s');";
+
+    $sql = sprintf($sql, $id_objet, $image_object);
+    $request = mysqli_query(bddConnect(), $sql);
+
+    return ($request != null) ? true : false;
+}
+
+//fonction pour calculer la nouvelle date de retour : jour du date de retour + jour saisi
+function insertNouvelleDate($jourSaisi, $date_retour){
+    // $sql = "INSERT INTO  emprunt()"
+}
+
 ?>

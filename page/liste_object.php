@@ -1,4 +1,6 @@
 <?php
+
+session_start();
 if (isset($_GET["cat"])) {
     $cat = $_GET["cat"];
     $listeObject = getAllObjectCat($cat);
@@ -6,6 +8,7 @@ if (isset($_GET["cat"])) {
     $listeObject = getAllObject();
 }
 $listCategorie = getAllCategorie();
+
 ?>
 <section class="form-cat">
     <form action="modele.php" method="get">
@@ -41,9 +44,10 @@ $listCategorie = getAllCategorie();
                             <td> <?= $obj["nom_objet"] ?> </td>
                             <td>
                                 <?php if (estEmprunt($obj["id_objet"])) { ?>
-                                    dispo
+                                    disponible <br>
+                                    <a href="dateDisponible.php"><button>Emprunter</button></a>
                                 <?php } else { ?>
-                                    est en cours d'emprunt
+                                    dispnible le <?= getDateEmpuntObject($obj["id_objet"]) ?>
                                 <?php } ?>
                             </td>
                         </tr>

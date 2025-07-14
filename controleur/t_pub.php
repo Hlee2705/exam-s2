@@ -46,8 +46,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nomUnique = uniqid($prefix, true) . "." . $extention;
 
 
-    echo "  titre : " . $titre . "  textePub : " . $textPub . "    nom : " . $nomUnique . "   typeInt :" . $typeInt ;
-
     //inseret le fichier dans la base de donnes
     if (!move_uploaded_file($nomTemporaire, $cheminDossierDestination . $nomUnique)) {
 
