@@ -24,3 +24,9 @@ CReATION DES PAGE :
             - [ok] image
         - insertion des donnes dans la bd
         - redirection ver okok
+
+    - liste object :
+        - creation de la page
+        - creaiotn de la requete
+        - creation de la fonction
+        - utilisation de la fonciton dans la page 

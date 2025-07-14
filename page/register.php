@@ -42,7 +42,7 @@
 
         <!-- image profil -->
         <label for="">Image : </label>
-        <input type="file" name="image_profil" id=""><br>
+        <input type="file" name="image_profil" id=""  accept="image/*" required ><br>
 
         <input class="inputSubmit" type="submit" value="Inscription">
 

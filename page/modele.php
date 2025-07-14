@@ -12,6 +12,14 @@ include("../include/fonction.php");
 </head>
 
 <body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="modele.php?p=liste_object.php">liste objet</a></li>
+                <li><a href="modele.php?p=login.php">deconnexion</a></li>
+            </ul>
+        </nav
+    </header>
 <main class="pt-3">
 
         <?php

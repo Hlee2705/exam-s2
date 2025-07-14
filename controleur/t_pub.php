@@ -1,18 +1,15 @@
 <?php
 include("../includes/fonction.php");
-session_start();
-var_dump($_SESSION["user"]);
-$idUser = $_SESSION["user"][0]["idUser"];
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     //verifier si le fichier est recu
-    if (!isset($_FILES["fichier"]) || $_FILES["fichier"]["error"] != 0) {
+    if (!isset($_FILES["image_profil"]) || $_FILES["image_profil"]["error"] != 0) {
         die("le fichier n'est pas recu");
     }
 
     //verifier la taille du fichier
-    $tailleFichier = $_FILES["fichier"]["size"];
+    $tailleFichier = $_FILES["image_profil"]["size"];
     $tailleMax = 20 * 1024 * 1024;
     if($tailleFichier > $tailleMax)
     {
@@ -20,14 +17,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 
     //verifier le type mine
-    $typeMime = mime_content_type($_FILES["fichier"]["tmp_name"]);
-    $typesAutorises = ['image/jpeg', 'image/png', 'image/gif','video/mp4'];
+    $typeMime = mime_content_type($_FILES["image_profil"]["tmp_name"]);
+    $typesAutorises = ['image/jpeg', 'image/png', 'image/gif'];
     if (!in_array($typeMime, $typesAutorises)) {
         die("Type MIME invalide !");
     }
 
-    $nomOriginal = $_FILES["fichier"]["name"];
-    $nomTemporaire = $_FILES["fichier"]["tmp_name"];
+    $nomOriginal = $_FILES["image_profil"]["name"];
+    $nomTemporaire = $_FILES["image_profil"]["tmp_name"];
 
     // chemin de destination
     $cheminDossierDestination = __DIR__ . "/../uploads/";
@@ -55,12 +52,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (!move_uploaded_file($nomTemporaire, $cheminDossierDestination . $nomUnique)) {
 
         echo "erreur lors du chargement du fichier";
-    } else {
-
-        //inseret l'fichier dans le table
-        insertPub($idUser,$titre,$textPub,$nomUnique,$typeInt);
-
-        header('Location: ../pages/home.php');
-        exit();
-    }
+    } 
+    
 }

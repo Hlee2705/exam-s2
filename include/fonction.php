@@ -40,4 +40,16 @@ function getDonnerUser($email, $mdp)
 
     return $donneesUtilisateur;
 }
+
+function getAllObject() {
+    $sql = "SELECT * FROM objet ;";
+    $request = mysqli_query(bddConnect(), $sql);
+
+    $listeObject = array();
+    while(($object = mysqli_fetch_assoc($request)) != null) {
+        $listeObject[] = $object;
+    }
+
+    return $listeObject;
+}
 ?>
