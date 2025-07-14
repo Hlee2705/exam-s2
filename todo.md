@@ -36,3 +36,17 @@ CReATION DES PAGE :
         - si il recois une categorie distincet on affiche ceux dans la categorie
         - fonction get all categorie
         - foinction get objectCategorie
+
+    
+VERSION 2
+    - Mettre dans session l'idmembre
+
+    - traitement upload image
+
+    - creation des fonctions
+     - inserer objet
+     - inserer image_objet
+
+    - traitement inserer objet
+        - utilisation des fonctions pour inserer l'objet et l'image dans la base
+    
