@@ -82,4 +82,35 @@ function getDateEmpuntObject($id_objet) {
     return mysqli_fetch_assoc($request)["date_retour"];
 }
 
+function getAllCategorie() {
+    $sql = "SELECT 
+                * 
+            FROM 
+                categorie_objet;";
+
+    $request = mysqli_query(bddConnect(),$sql);
+
+    $listeCategorie = array();
+    while(($cat = mysqli_fetch_assoc($request))) {
+        $listeCategorie[] = $cat;
+    }
+    return $listeCategorie;
+}
+
+function getAllObjectCat($id_cat) {
+    $sql = "SELECT  
+                * 
+            FROM 
+                objet
+            WHERE 
+                objet.id_categorie = %s;";
+    $sql = sprintf($sql , $id_cat);
+    $request = mysqli_query(bddConnect(),$sql);
+
+    $listObject = array();
+    while(($obj = mysqli_fetch_assoc($request))) {
+        $listObject[] = $obj;
+    }
+    return $listObject;
+}
 ?>

@@ -1,55 +1,107 @@
 <!-- register.php -->
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>inscription</title>
-    <link rel="stylesheet" href="../assets/css/stylev.css">
+    <link rel="stylesheet" href="../asset/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../asset/css/fontawesome/css/all.css">
+    <style>
+        body.register {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .formulaire {
+            max-width: 500px;
+            width: 100%;
+            margin: 4rem auto;
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .formulaire label {
+            font-weight: 500;
+            margin-top: 0.8rem;
+        }
+
+        .formulaire input,
+        .formulaire select {
+            margin-bottom: 1rem;
+        }
+
+        .formulaire .inputSubmit {
+            margin-top: 1rem;
+            width: 100%;
+        }
+
+        .formulaire a {
+            display: block;
+            text-align: center;
+            margin-top: 1rem;
+            color: #0d6efd;
+            text-decoration: none;
+        }
+
+        .formulaire a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 
 <body class="register">
-    <form action="../controleur/t_register.php" method="post" class="formulaire">
 
-        <!-- champs Nom , email , password et date de naissance -->
+    <form action="../controleur/t_register.php" method="post" class="formulaire shadow" enctype="multipart/form-data">
+        <h2 class="text-center text-primary mb-4">Créer un compte</h2>
+
         <!-- champ nom -->
         <label for="Nom">Nom :</label>
-        <input class="inputNom" type="text" name="nom" id="Nom" placeholder="Nom"> <br>
+        <input class="form-control" type="text" name="nom" id="Nom" placeholder="Nom" required>
 
-        <!-- champs mail -->
-       <label for="Email">Email :</label>
-        <input class="inputEmail" type="email" name="mail" id="Email" placeholder="Email"><br>
+        <!-- champ email -->
+        <label for="Email">Email :</label>
+        <input class="form-control" type="email" name="mail" id="Email" placeholder="Email" required>
 
-        <!-- champs mot de passe -->
-       <label for="mdp">Mot de passe :</label>
-        <input class="inputPassword" type="password" name="mdp" id="mdp" placeholder="mot de passe"><br>
+        <!-- champ mot de passe -->
+        <label for="mdp">Mot de passe :</label>
+        <input class="form-control" type="password" name="mdp" id="mdp" placeholder="Mot de passe" required>
 
-        <!-- champs date de naissance -->
-       <label for="date">date de naissance :</label>
-        <input class="inputDate" type="date" name="date" id="date" placeholder="date de naissance"><br>
+        <!-- champ date de naissance -->
+        <label for="date">Date de naissance :</label>
+        <input class="form-control" type="date" name="date" id="date" required>
 
-        <!-- gender -->
-         <label for="genre">Genre :</label>
-        <select name="genre" id="">
+        <!-- champ genre -->
+        <label for="genre">Genre :</label>
+        <select class="form-select" name="genre" id="genre" required>
+            <option value="">-- Choisir --</option>
             <option value="M">M</option>
             <option value="F">F</option>
-        </select><br>
+        </select>
 
         <!-- ville -->
-        <label for="">Ville : </label>
-        <input type="text" name="ville" id=""> <br>
+        <label for="ville">Ville :</label>
+        <input class="form-control" type="text" name="ville" id="ville" placeholder="Ville" required>
 
-        <!-- image profil -->
-        <label for="">Image : </label>
-        <input type="file" name="image_profil" id=""  accept="image/*" required ><br>
+        <!-- image de profil -->
+        <label for="image_profil">Image :</label>
+        <input class="form-control" type="file" name="image_profil" id="image_profil" accept="image/*" required>
 
-        <input class="inputSubmit" type="submit" value="Inscription">
+        <!-- bouton submit -->
+        <input class="btn btn-success inputSubmit" type="submit" value="Inscription">
 
-        <!-- lien vers la page de connexion qui est login.php -->
-        <a href="./login.php">connexion</a>
+        <!-- lien vers login -->
+        <a href="./login.php">Déjà un compte ? Se connecter</a>
 
     </form>
+    
+<script src="../asset/bootstrap/js/bootstrap.bundle.js"></script>
 </body>
+
+</html>
+
 
 </html>

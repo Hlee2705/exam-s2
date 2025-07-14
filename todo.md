@@ -26,7 +26,13 @@ CReATION DES PAGE :
         - redirection ver okok
 
     - liste object :
-        - creation de la page
-        - creaiotn de la requete
-        - creation de la fonction
-        - utilisation de la fonciton dans la page 
+        - [ok] creation de la page
+        - [ok] creaiotn de la requete
+        - [ok] creation de la fonction
+        - [ok] utilisation de la fonciton dans la page 
+
+    - objet filter :
+        - cree form pour filitrer 
+        - si il recois une categorie distincet on affiche ceux dans la categorie
+        - fonction get all categorie
+        - foinction get objectCategorie
