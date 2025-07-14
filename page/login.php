@@ -1,21 +1,35 @@
 <!-- login.php -->
-<section class="login">
-    <!-- formulaire pour se connecté  -->
-    <form action="../controleur/t_login.php" method="post" class="formulaire">
+<section class="login d-flex justify-content-center align-items-center vh-100 bg-gradient bg-light">
+    <form action="../controleur/t_login.php" method="post" class="formulaire p-5 rounded-4 shadow-lg bg-white" style="min-width: 320px; max-width: 400px; width: 100%;">
 
-        <!-- champ email et champ nom pour se connecté -->
-        <input class="inputNom" type="email" name="email" placeholder="email">
-        <input class="inputPassword" type="password" name="mdp" placeholder="mot de passe">
+        <h2 class="text-center mb-4 text-primary">Connexion</h2>
 
-        <!-- message d'erreur si une connexion n'est pas valider -->
+        <!-- champ email -->
+        <div class="form-floating mb-3">
+            <input class="form-control" type="email" id="email" name="email" placeholder="email" required>
+            <label for="email">Adresse email</label>
+        </div>
+
+        <!-- champ mot de passe -->
+        <div class="form-floating mb-3">
+            <input class="form-control" type="password" id="mdp" name="mdp" placeholder="mot de passe" required>
+            <label for="mdp">Mot de passe</label>
+        </div>
+
+        <!-- message d'erreur -->
         <?php if (isset($_GET["error"])) { ?>
-            <p>Mot de passe ou email invalide </p>
+            <p class="text-danger text-center">Mot de passe ou email invalide</p>
         <?php } ?>
 
-        <input class="inputSubmit" type="submit" value="Connexion"></td>
+        <!-- bouton submit -->
+        <div class="d-grid mb-3">
+            <input class="btn btn-primary btn-lg rounded-pill" type="submit" value="Connexion">
+        </div>
 
-        <!-- lien vers la page d'inscription qui est register -->
-        <a href="./register.php">S'inscrire</a>
-
+        <!-- lien d'inscription -->
+        <div class="text-center">
+            <a href="./register.php" class="text-decoration-none text-secondary">Pas encore inscrit ? <strong>S'inscrire</strong></a>
+        </div>
     </form>
 </section>
+

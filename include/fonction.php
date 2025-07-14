@@ -52,4 +52,18 @@ function getAllObject() {
 
     return $listeObject;
 }
+
+function estEmprunt ($id_objet){
+    $sql = "SELECT * FROM emprunt WHERE id_objet = %s AND NOW() BETWEEN date_emprunt AND date_retour;";
+
+    $sql = sprintf($sql, $id_objet);
+
+    $request = mysqli_query(bddConnect(), $sql);
+
+    $nblignes = mysqli_num_rows($request);
+
+    return ($nblignes != 0) ? false : true;
+    
+}
+
 ?>
