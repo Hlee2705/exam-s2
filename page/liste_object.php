@@ -11,8 +11,11 @@
             <tr>
                 <td> <?= $obj["nom_objet"] ?> </td>
                 <td>
-                    est retourné le : xx
+                    <?php if(estEmprunt($obj["id_objet"])){?>
                     dispo
+                    <?php } else { ?>
+                        est en cours d'emprunt 
+                    <?php } ?>
                 </td>
             </tr>
         <?php } ?>
